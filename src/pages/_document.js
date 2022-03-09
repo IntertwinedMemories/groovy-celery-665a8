@@ -32,9 +32,18 @@ export default class MyDocument extends Document {
         return (
             <Html {...this.helmetHtmlAttrComponents}>
                 <Head>{this.helmetHeadComponents}</Head>
+                {/* Google Analytics */}
                 <body {...this.helmetBodyAttrComponents}>
                     <Main />
                     <script src="/js/plugins.js" />
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EJY6K8EV8"></script>
+                    <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments) }
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-4EJY6K8EV8');
+                    </script>
                     <NextScript />
                 </body>
             </Html>
